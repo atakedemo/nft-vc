@@ -6,7 +6,7 @@
 // (本実行)
 // node scripts/bulk-mint.js ./tmp/members.json --dry-run=false
 //
-
+require('dotenv').config();
 const { NODE_ENV, CONTRACT_ADDRESS, PUBLIC_KEY, PRIVATE_KEY } = process.env
 
 const fs = require("fs")

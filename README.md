@@ -44,9 +44,13 @@ $ node scripts/convert-did-public-key.js ./keys/wallet-private.dev.key
 
 - 参考: `hostings/staging/public/.well-known/did.json`
 
+- 注意: id→自作のホスト名に末尾を変更、controller→idと同じ、publicKeyJwk→上記で作成した公開鍵に変更
+
 3. IssuerProfile ファイルを作成する
 
 - 参考: `hostings/staging/public/blockcerts.json`
+
+- 注意: id/url→自作のホスト名に末尾を変更、name→任意のものに変更、publicKey>id→末尾を管理者のウォレットアドレスに変更
 
 4. RevocationList ファイルを作成する
 
@@ -61,6 +65,8 @@ $ node scripts/convert-did-public-key.js ./keys/wallet-private.dev.key
 ### VC 発行フロー
 
 1. GoogleForm から JSON に変換
+
+#### フォームがわからないので自作。/tmp/members.json.sample を参照
 
 ```sh
 $ node scripts/convert-members.js ./tmp/form.csv > ./tmp/members.json
@@ -78,14 +84,14 @@ $ node scripts/generate-vc-image.js ./tmp/members.json
 $ node scripts/generate-unsigned-vc.js ./tmp/members.json
 ```
 
-4. VC 発行
+4. VC 発行 ※rpc_urlはコマンドで直打ち
 
 ```sh
 # dev (goerli)
-$ cert-issuer -c cert-issuer.dev.ini --chain ethereum_goerli --goerli_rpc_url $GOERLI_ALCHEMY_URL
+$ cert-issuer -c cert-issuer.dev.ini --chain ethereum_goerli --goerli_rpc_url <GOERLI_ALCHEMY_URL>
 
 # prd (mainnet)
-$ cert-issuer -c cert-issuer.prd.ini --chain ethereum_mainnet --ethereum_rpc_url $MAINNET_ALCHEMY_URL
+$ cert-issuer -c cert-issuer.prd.ini --chain ethereum_mainnet --ethereum_rpc_url <MAINNET_ALCHEMY_URL>
 ```
 
 5. 発行済み VC を IPFS にアップロード
@@ -108,20 +114,20 @@ $ node scripts/generate-nft-image.js ./tmp/members.json
 $ node scripts/bulk-upload-to-ipfs.js ./tmp/members.json nft
 ```
 
-3. コントラクトのデプロイ
+3. コントラクトのデプロイ ※デプロイ先のネットワークは直打ち
 
 ```sh
-$ npx hardhat run scripts/deploy.js --network $NODE_ENV
+$ npx hardhat run scripts/deploy.js --network <goerli/mainnet/polygon/polygonMumbai>
 Compiled 1 Solidity file successfully
 deployed to: 0x1234567890123456789012345678901234567890
 ```
 
 環境変数 `CONTRACT_ADDRESS` に上記のアドレスをセットします。
 
-4. ソースコードのアップロード
+4. ソースコードのアップロード ※コントラクトアドレスを直打ち
 
 ```sh
-$ npx hardhat verify $CONTRACT_ADDRESS --constructor-args arguments.js --network $NODE_ENV
+$ npx hardhat verify <CONTRACT_ADDRESS> --constructor-args arguments.js --network <goerli/mainnet/polygon/polygonMumbai>
 ```
 
 ※ エラー発生時に `$ npx hardhat clean` で解消するケースを確認している。

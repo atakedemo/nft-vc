@@ -1,0 +1,7 @@
+{
+  "@context": "https://w3id.org/openbadges/v2",
+  "id": "https://issuer.4attraem.com/blockcerts_revocation_list.json",
+  "type": "RevocationList",
+  "issuer": "https://issuer.4attraem.com/blockcerts.json",
+  "revokedAssertions": []
+}

@@ -5,6 +5,7 @@
 const fs = require("fs")
 const fetch = require("node-fetch")
 const path = require("path")
+require('dotenv').config();
 
 const {
   NODE_ENV,
@@ -104,19 +105,19 @@ const getTokenSymbolFromEnv = () => {
 }
 
 const getTokenName = () => {
-  return "XXX Credentials v1.0"
+  return "VC Sample Credentials v1.0"
 }
 
 const getTokenSymbol = () => {
-  return "XXX Credentials"
+  return "VC Sample Credentials"
 }
 
 const getTokenDescription = () => {
-  return "XXX Credentials is a platform for NFT delivery of certificates of completion and diplomas for special courses offered by XXXXX XXXXXXXXX of XXXXXXXXXX. It is distributed to those who have passed the course or graduated from the undergraduate or graduate program."
+  return "VC Sample Credentials is a platform for NFT delivery of certificates of completion and diplomas for special courses offered by VC SampleXX VC SampleVC SampleVC Sample of VC SampleVC SampleVC SampleX. It is distributed to those who have passed the course or graduated from the undergraduate or graduate program."
 }
 
 const getTokenJapaneseDescription = () => {
-  return "XXX Credentialsは、XXXXXXの開講する特別な講座、コースに対する受講修了証明書、卒業の証となる学位記などをNFTで配信するプラットフォームです。講座の合格者や本学の学部卒業生・大学院修了生に対して配信されます。"
+  return "VC Sample Credentialsは、VC SampleVC Sampleの開講する特別な講座、コースに対する受講修了証明書、卒業の証となる学位記などをNFTで配信するプラットフォームです。講座の合格者や本学の学部卒業生・大学院修了生に対して配信されます。"
 }
 
 const getOpenSeaDescription = () => {

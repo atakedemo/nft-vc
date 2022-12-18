@@ -13,6 +13,7 @@
 //
 
 const fs = require("fs")
+require('dotenv').config();
 const pinataSDK = require("@pinata/sdk")
 
 const {

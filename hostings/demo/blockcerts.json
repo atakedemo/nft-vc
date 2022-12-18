@@ -1,0 +1,18 @@
+{
+  "@context": [
+    "https://w3id.org/openbadges/v2",
+    "https://w3id.org/blockcerts/3.0"
+  ],
+  "type": "Profile",
+  "id": "https://issuer.4attraem.com/blockcerts.json",
+  "name": "Bamb00 Inc.",
+  "url": "https://issuer.4attraem.com/",
+  "publicKey": [
+    {
+      "id": "ecdsa-koblitz-pubkey:0x7b718D4Ce6ca83536660a314639559F3d3f6e9e3",
+      "created": "2022-10-10T10:00:00.000000+00:00"
+    }
+  ],
+  "revocationList": "https://issuer.4attraem.com/blockcerts_revocation_list.json",
+  "image": ""
+}

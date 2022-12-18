@@ -1,0 +1,23 @@
+{
+  "id": "did:web:did.issuer.4attream.com",
+  "verificationMethod": [
+    {
+      "id": "#key-1",
+      "controller": "did:web:issuer.4attraem.com",
+      "type": "EcdsaSecp256k1VerificationKey2019",
+      "publicKeyJwk": {
+        "kty":"EC",
+        "crv":"K-256",
+        "x":"ry05Xyz86TnTXl1gWCHmcsxc86VGeynb2DJRE3tc2dQ",
+        "y":"gPVk8119TeJ62bAajwBgZFUdVNSgmYcojEgOY3Zq6_Q"
+      }
+    }
+  ],
+  "service": [
+    {
+      "id": "#service-1",
+      "type": "IssuerProfile",
+      "serviceEndpoint": "https://issuer.4attraem.com/blockcerts.json"
+    }
+  ]
+}

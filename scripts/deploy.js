@@ -5,6 +5,7 @@
 // $ npx hardhat run scripts/deploy.js --network rinkeby|goerli|mainnet
 //
 
+require('dotenv').config();
 const hre = require("hardhat")
 const { MAX_BATCH_SIZE, getTokenName, getTokenSymbol } = require("./utils")
 
